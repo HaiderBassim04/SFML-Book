@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
+#include "ResourceHolder.h"
 
 class Game
 {
@@ -16,7 +16,7 @@ private:
 
 private:
 	sf::RenderWindow _window;
-	sf::CircleShape _player;
+	sf::Sprite _player;
 
 	bool _isMovingUp = false;
 	bool _isMovingRight = false;

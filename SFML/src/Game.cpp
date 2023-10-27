@@ -2,13 +2,15 @@
 
 Game::Game() : _window(sf::VideoMode(640, 480), "SFML Application")
 {
-	_player.setRadius(40.f);
-	_player.setPosition(100.f, 100.f);
-	_player.setFillColor(sf::Color::Cyan);
+	
 }
 
 void Game::Run()
 {
+	ResourceHolder<sf::Texture, Textures::ID> textures;
+	textures.Load(Textures::Airplane, "res/Airplane.png");
+	_player.setTexture(textures.Get(Textures::Airplane));
+
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	const sf::Time timeStep = sf::seconds (1.f / 60.f);
